@@ -1,0 +1,31 @@
+/* global.css */
+
+/* Universal reset for padding and margin */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styling for the entire body */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #121212;  /* Dark background */
+  color: #fff;  /* White text for contrast */
+  height: 100%;  /* Full viewport height */
+  width: 100%; /* Ensure body takes up full width */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Start aligned vertically */
+  text-align: center; /* Center text inside content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure that the content fits within the screen without overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
