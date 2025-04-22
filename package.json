@@ -27,6 +27,7 @@
     "@iconify/iconify": "^3.1.1",
     "@iconify/json": "^2.2.330",
     "@iconify/svelte": "^4.2.0",
+    "@sveltejs/adapter-static": "^3.0.8",
     "chart.js": "^4.4.9",
     "lucide-svelte": "^0.503.0",
     "svelte-routing": "^2.13.0"
