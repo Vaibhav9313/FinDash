@@ -50,20 +50,20 @@
 
 	<div class="nav-links">
 		<ul>
-			<li><button class:active={activeItem === 'Dashboard'} on:click={() => handleMenuClick('Dashboard')}>Dashboard</button></li>
-			<li><button class:active={activeItem === 'Reports'} on:click={() => handleMenuClick('Reports')}>Reports</button></li>
-			<li><button class:active={activeItem === 'Analytics'} on:click={() => handleMenuClick('Analytics')}>Analytics</button></li>
-			<li><button class:active={activeItem === 'Settings'} on:click={() => handleMenuClick('Settings')}>Settings</button></li>
+			<li><a href="#" class:active={activeItem === 'Dashboard'} on:click={() => handleMenuClick('Dashboard')}>Dashboard</a></li>
+			<li><a href="#" class:active={activeItem === 'Reports'} on:click={() => handleMenuClick('Reports')}>Reports</a></li>
+			<li><a href="#" class:active={activeItem === 'Analytics'} on:click={() => handleMenuClick('Analytics')}>Analytics</a></li>
+			<li><a href="#" class:active={activeItem === 'Settings'} on:click={() => handleMenuClick('Settings')}>Settings</a></li>
 		</ul>
 	</div>
-	
+
 	{#if isMenuOpen}
 		<div class="mobile-menu">
 			<ul>
-				<li><button class:active={activeItem === 'Dashboard'} on:click={() => handleMenuClick('Dashboard')}>Dashboard</button></li>
-				<li><button class:active={activeItem === 'Reports'} on:click={() => handleMenuClick('Reports')}>Reports</button></li>
-				<li><button class:active={activeItem === 'Analytics'} on:click={() => handleMenuClick('Analytics')}>Analytics</button></li>
-				<li><button class:active={activeItem === 'Settings'} on:click={() => handleMenuClick('Settings')}>Settings</button></li>
+				<li><a href="#" class:active={activeItem === 'Dashboard'} on:click={() => handleMenuClick('Dashboard')}>Dashboard</a></li>
+				<li><a href="#" class:active={activeItem === 'Reports'} on:click={() => handleMenuClick('Reports')}>Reports</a></li>
+				<li><a href="#" class:active={activeItem === 'Analytics'} on:click={() => handleMenuClick('Analytics')}>Analytics</a></li>
+				<li><a href="#" class:active={activeItem === 'Settings'} on:click={() => handleMenuClick('Settings')}>Settings</a></li>
 			</ul>
 		</div>
 	{/if}
@@ -217,18 +217,5 @@
 			justify-content: flex-end;
 			width: 100%;
 		}
-	}
-	button {
-		background: none;
-		border: none;
-		padding: 0;
-		font: inherit;
-		color: inherit;
-		text-decoration: underline; /* Optional: to mimic link styles */
-		cursor: pointer;
-	}
-
-	button:focus {
-		outline: none; /* Customize if you want a specific focus style */
 	}
 </style>
