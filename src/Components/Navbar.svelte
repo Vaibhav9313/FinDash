@@ -1,5 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
+	import logo from '../assets/logo.png';
 
 	export let activeItem;
 	export let setActive;
@@ -38,7 +39,7 @@
 
 <nav class="navbar" bind:this={navbarElement}>
 	<div class="logo-container" on:click={goHome}>
-		<img src="/src/assets/logo.png" alt="Logo" class="logo-img" />
+		<img src={logo} alt="Logo" class="logo-img" />
 		<span class="company-name">Fin Dash</span>
 	</div>
 
