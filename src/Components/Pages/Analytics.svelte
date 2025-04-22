@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { browser } from '$app/environment'; // ✅ SSR-safe check
 	import {
 		Chart,
 		CategoryScale,
@@ -17,7 +16,9 @@
 		Legend
 	} from 'chart.js';
 
-	if (browser) {
+	let isBrowser = typeof window !== 'undefined';  // Manually checking if it's a browser environment
+
+	if (isBrowser) {
 		Chart.register(
 			CategoryScale,
 			LinearScale,
@@ -37,7 +38,7 @@
 	let lineChart, barChart, pieChart, doughnutChart;
 
 	onMount(() => {
-		if (!browser) return; // ✅ Prevents SSR crash on Vercel
+		if (!isBrowser) return; // Prevents SSR crash on Vercel or non-browser environments
 
 		const lineCanvas = document.getElementById('lineChart');
 		const barCanvas = document.getElementById('barChart');
