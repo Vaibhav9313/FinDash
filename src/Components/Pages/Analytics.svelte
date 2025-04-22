@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment'; // ✅ SSR-safe check
 	import {
 		Chart,
 		CategoryScale,
@@ -16,24 +17,28 @@
 		Legend
 	} from 'chart.js';
 
-	Chart.register(
-		CategoryScale,
-		LinearScale,
-		PointElement,
-		LineElement,
-		BarElement,
-		ArcElement,
-		LineController,
-		BarController,
-		PieController,
-		DoughnutController,
-		Tooltip,
-		Legend
-	);
+	if (browser) {
+		Chart.register(
+			CategoryScale,
+			LinearScale,
+			PointElement,
+			LineElement,
+			BarElement,
+			ArcElement,
+			LineController,
+			BarController,
+			PieController,
+			DoughnutController,
+			Tooltip,
+			Legend
+		);
+	}
 
 	let lineChart, barChart, pieChart, doughnutChart;
 
 	onMount(() => {
+		if (!browser) return; // ✅ Prevents SSR crash on Vercel
+
 		const lineCanvas = document.getElementById('lineChart');
 		const barCanvas = document.getElementById('barChart');
 		const pieCanvas = document.getElementById('pieChart');
