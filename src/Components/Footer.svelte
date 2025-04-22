@@ -1,23 +1,24 @@
 <script>
-    import  Icon  from '@iconify/svelte';
+    import Icon from '@iconify/svelte';
 </script>
   
 <footer class="footer">
     <p class="footer-text">© 2025 Fin Dash. All rights reserved.</p>
   
     <div class="social-links">
-        <a href="#" aria-label="Facebook">
+        <!-- Use a button or span for links with no href -->
+        <button aria-label="Facebook" class="social-button" on:click={() => {}}>
             <Icon icon="mdi:facebook" width="24" height="24" />
-        </a>
-        <a href="#" aria-label="X (Twitter)">
+        </button>
+        <button aria-label="X (Twitter)" class="social-button" on:click={() => {}}>
             <Icon icon="simple-icons:x" width="24" height="24" />
-        </a>
-        <a href="#" aria-label="Instagram">
+        </button>
+        <button aria-label="Instagram" class="social-button" on:click={() => {}}>
             <Icon icon="mdi:instagram" width="24" height="24" />
-        </a>
-        <a href="#" aria-label="LinkedIn">
+        </button>
+        <button aria-label="LinkedIn" class="social-button" on:click={() => {}}>
             <Icon icon="mdi:linkedin" width="24" height="24" />
-        </a>
+        </button>
     </div>
 </footer>
   
@@ -42,13 +43,16 @@
         gap: 20px;
     }
   
-    .social-links a {
-        color: #4caf50;
+    .social-button {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        padding: 0;
         transition: color 0.3s ease;
     }
   
-    .social-links a:hover {
+    .social-button:hover {
         color: #3aaf85;
     }
 </style>
-  
