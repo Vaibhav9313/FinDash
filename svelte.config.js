@@ -1,22 +1,26 @@
 import sveltePreprocess from 'svelte-preprocess';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import adapter from '@sveltejs/adapter-static';
+
+let adapter;
+if (process.env.VERCEL) {
+  adapter = import('@sveltejs/adapter-static').then((module) => module.default);
+} else {
+  adapter = import('@sveltejs/adapter-static').then((module) => module.default);
+}
 
 export default {
   preprocess: [vitePreprocess(), sveltePreprocess()],
 
   kit: {
-    // Specify the adapter to generate static assets
-    adapter: adapter(),
+    // Use dynamic import for the adapter
+    adapter: adapter,
 
-    // You can specify other kit options here as needed
     paths: {
-      base: '', // Specify your base path if needed (for example, if the app is hosted in a subfolder)
+      base: '', // Set the base path if required
     },
 
-    // Enable prerendering if necessary
     prerender: {
-      default: true, // Prerender all pages by default
+      default: true,
     },
   },
 };
